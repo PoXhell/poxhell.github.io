@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CPO Lan - زبان برنامه‌نویسی سی‌پو</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+
+  <!-- هدر -->
+  <header class="bg-gray-800 shadow">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold text-green-400">CPO Lan</h1>
+      <nav class="space-x-6">
+        <a href="#intro" class="hover:text-green-400 transition">معرفی</a>
+        <a href="#downloads" class="hover:text-green-400 transition">دانلود</a>
+        <a href="#docs" class="hover:text-green-400 transition">مستندات</a>
+        <a href="#contact" class="hover:text-green-400 transition">تماس</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- بخش معرفی -->
+  <section id="intro" class="container mx-auto px-4 py-16 max-w-4xl text-center">
+    <h2 class="text-4xl font-extrabold mb-6 text-green-400">زبان برنامه‌نویسی سی‌پو</h2>
+    <p class="text-lg leading-relaxed">
+        سی پو یم زبان قدرتمند سریع آسان است.<br>
+        این زبان مفصر میباید.<br>
+        درحال حاضر این نسخه ها دردسترس هست:<br>
+        0.0.2Beta<br>
+        0.0.3Beta<br>
+        0.0.5Beta<br>
+        نسخه 0.0.5Beta هنوز ورژن لینوکس ساخته نشده<br>
+        درحال حاضر پکیج منیجر خراب میباشد.(پول سرور نداریم!)<br>
+    </p>
+  </section>
+
+  <!-- بخش دانلود -->
+  <section id="downloads" class="bg-gray-800 py-16">
+    <div class="container mx-auto px-4 max-w-3xl text-center">
+      <h2 class="text-3xl font-bold mb-8 text-green-400">دانلود نسخه‌های سی‌پو</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <a href="/dl/cpo/0.0.5beta/windows.zip" target="_blank" class="bg-green-500 hover:bg-green-600 rounded-lg px-6 py-4 font-semibold shadow-lg transition">
+          0.0.5Beta Windows
+        </a>
+        <a href="/dl/cpo/0.0.3beta/linux/cpolanlin" target="_blank" class="bg-green-500 hover:bg-green-600 rounded-lg px-6 py-4 font-semibold shadow-lg transition">
+          0.0.3Beta Linux
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- بخش مستندات -->
+  <section id="docs" class="container mx-auto px-4 py-16 max-w-5xl">
+    <h2 class="text-3xl font-bold mb-6 text-green-400 text-center">مستندات سی‌پو</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <div>
+        <h3 class="text-xl font-semibold mb-3">شروع سریع</h3>
+        <p>یک فایل بسازید و اجرا کنید:</p>
+        <pre class="bg-gray-900 rounded p-4 mt-2 overflow-auto"><code>cpo test.cpo</code></pre>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-3">نمونه کد</h3>
+        <pre class="bg-gray-900 rounded p-4 mt-2 overflow-auto"><code>
+// برنامه "سلام دنیا" در سی‌پو
+import console
+console.print("Hello World")
+</code></pre>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-3">مدیریت بسته</h3>
+        <p>برای اضافه کردن کتابخانه‌ها و بسته‌ها از دستور زیر استفاده کنید:</p>
+        <pre class="bg-gray-900 rounded p-4 mt-2 overflow-auto"><code>pom install beep</code></pre>
+                درحال حاضر پکیج منیجر خراب میباشد.(پول سرور نداریم!)<br>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-3">تماس با ما</h3>
+        <p>برای سوالات و همکاری‌ها، ایمیل بزن به:</p>
+        <a href="poopwwwwwwwwww@outlook.com" class="text-green-400 hover:underline">poopwwwwwwwwww@outlook.com</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- فوتر -->
+  <footer class="bg-gray-800 text-center py-6 text-gray-500 text-sm">
+<script>
+  document.write(`© ${new Date().getFullYear()} Po. تمام حقوق محفوظ است.`);
+</script>
+  </footer>
+
+</body>
+</html>
