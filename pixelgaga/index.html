@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pixel-Craft</title>
+<style>
+  /* Reset */
+  * {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0; box-sizing: border-box;
+    color: white;
+  }
+  body {
+    background-color: #222;
+        overflow: hidden;
+  }
+  /* HEADER */
+  header {
+    background-color: #333;
+    height: 70px;
+    border-radius: 12px;
+    margin: 15px 20px 30px 20px;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-size: 32px;
+    color: #ce5ede;
+    font-weight: 900;
+    user-select: none;
+    cursor: default;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 38px;
+  }
+  nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    padding: 10px 50px 10px 45px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+    overflow: hidden;
+    z-index: 1;
+  }
+  nav ul li a:hover {
+    background-color: #6f42c1;
+    color: #f3e8ff;
+  }
+  nav ul li a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.15;
+    filter: drop-shadow(0 0 2px #a04eda);
+    transition: opacity 0.3s, filter 0.3s;
+    z-index: 0;
+  }
+  nav ul li a:hover::before {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 6px #ce5ede);
+  }
+  nav ul li:nth-child(1) a::before { /* Home */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23ce5ede" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M219.31,108.68l-80-80a16,16,0,0,0-22.62,0l-80,80A15.87,15.87,0,0,0,32,120v96a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V160h32v56a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V120A15.87,15.87,0,0,0,219.31,108.68ZM208,208H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48V120l80-80,80,80Z"/></svg>');
+  }
+  nav ul li:nth-child(2) a::before { /* Store */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23ce5ede" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M231.69,93.81,217.35,43.6A16.07,16.07,0,0,0,202,32H54A16.07,16.07,0,0,0,38.65,43.6L24.31,93.81A7.94,7.94,0,0,0,24,96v16a40,40,0,0,0,16,32v72a8,8,0,0,0,8,8H208a8,8,0,0,0,8-8V144a40,40,0,0,0,16-32V96A7.94,7.94,0,0,0,231.69,93.81ZM54,48H202l11.42,40H42.61Zm98,56v8a24,24,0,0,1-48,0v-8ZM51.06,132.2A24,24,0,0,1,40,112v-8H88v8a24,24,0,0,1-35.12,21.26A7.88,7.88,0,0,0,51.06,132.2ZM200,208H56V151.2a40.57,40.57,0,0,0,8,.8,40,40,0,0,0,32-16,40,40,0,0,0,64,0,40,40,0,0,0,32,16,40.57,40.57,0,0,0,8-.8Zm16-96a24,24,0,0,1-11.07,20.2,8.08,8.08,0,0,0-1.8,1.05A24,24,0,0,1,168,112v-8h48Z"/></svg>');
+  }
+  nav ul li:nth-child(3) a::before { /* Profile */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23ce5ede" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M253.66,133.66l-24,24a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L216,132.69V128A88,88,0,0,0,56.49,76.67a8,8,0,0,1-13-9.34A104,104,0,0,1,232,128v4.69l10.34-10.35a8,8,0,0,1,11.32,11.32Zm-41.18,55A104,104,0,0,1,24,128v-4.69L13.66,133.66A8,8,0,0,1,2.34,122.34l24-24a8,8,0,0,1,11.32,0l24,24a8,8,0,0,1-11.32,11.32L40,123.31V128a87.62,87.62,0,0,0,22.24,58.41A79.66,79.66,0,0,1,98.3,157.66a48,48,0,1,1,59.4,0,79.59,79.59,0,0,1,36.08,28.78,89.68,89.68,0,0,0,5.71-7.11,8,8,0,0,1,13,9.34ZM128,152a32,32,0,1,0-32-32A32,32,0,0,0,128,152Zm0,64a88.2,88.2,0,0,0,53.92-18.49,64,64,0,0,0-107.84,0A87.57,87.57,0,0,0,128,216Z"/></svg>');
+  }
+  nav ul li:nth-child(4) a::before { /* About */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23ce5ede" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M144,176a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176Zm88-48A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128ZM124,96a12,12,0,1,0-12-12A12,12,0,0,0,124,96Z"/></svg>');
+  }
+
+  nav ul li a.active {
+    background-color: #8a63d2;
+    color: #f3e8ff;
+    box-shadow: 0 0 8px #b375ff;
+    font-weight: 700;
+    cursor: default;
+    pointer-events: none;
+  }
+  nav ul li a.active::before {
+    opacity: 0.8 !important;
+    filter: drop-shadow(0 0 8px #b375ff) !important;
+  }
+
+  /* MAIN */
+  main {
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    padding: 0 20px;
+  }
+  .top-section {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .text-left {
+    margin-top: 70px;
+    flex: 1 1 400px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #ddd;
+    text-align: center;
+  }
+  .image-right {
+    flex: 1 1 400px;
+    background-color: #444;
+    border-radius: 12px;
+    height: 220px;
+    background-image: url('https://s6.uupload.ir/files/tower_5r0w.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 15px #8a63d2aa;
+  }
+
+.boxes {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  cursor: default;
+}
+
+.box {
+  flex: 1 1 30%;
+  min-width: 150px;
+  min-height: 150px;
+  background-color: #333;
+  padding: 20px;
+  box-shadow: 0 0 10px #6f42c1aa;
+  transition: background-color 0.3s ease;
+  border-radius: 30px 20px 50px 40px / 15px 25px 60px 35px;
+  cursor: default;
+}
+  .box:hover {
+    background-color: #6f42c1;
+    box-shadow: 0 0 15px #b375ff;
+    cursor: default;
+  }
+  .box h3 {
+    margin-bottom: 12px;
+    color: #ce5ede;
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  .box p {
+    font-size: 1rem;
+    color: #ddd;
+    text-align: center;
+  }
+
+  .small-text {
+    font-size: 0.9rem;
+    color: #bbb;
+    max-width: 600px;
+    margin: 0 auto 60px;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  /* FOOTER */
+  footer {
+    background-color: #333;
+    padding: 6px 20px;
+    border-radius: 0 0 12px 12px;
+    color: #aaa;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .copyright {
+    flex: 1 1 auto;
+  }
+  .owners {
+    flex: 1 1 auto;
+    color: #ce5ede;
+    font-weight: 600;
+    text-align: right;
+  }
+.image-right.fade-in {
+  animation: fadeZoom 1s ease-in-out forwards;
+}
+
+@keyframes fadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo"><span class="logo1">Pixel </span>Craft</div>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Store</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+    <div class="auth-links">
+      <a href="#">Sign In</a>
+      <a href="#">Login</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="top-section">
+      <div class="text-left">
+        Server Pixel-Craft Ieki Az Behtarin Server Hai Minecraft Khahad Bood Va Niaz Be Hemaiat Hai Shoma Player Aziz Darad Mitavaniad Ba Kharid Rank Ia Moarefi Server Be Dostan Az Server Ma Hemaiat Konid. 
+        <br>🟢N/A Member Online
+      </div>
+      <div class="image-right"></div>
+    </section>
+
+    <section class="boxes">
+      <div class="box">
+        <h3>Lobby</h3>
+        <p>Lobby Mahal Spawn Va Login Player Ha Ast<br>Mitavanid Dar Lobby Ia Az MiniGames Ha Estefade Konid Ia Az NPC Ha Game Mode khod Ra Moshkhas Konid<br>Agar Dar Ieki Az GameMode Hai Server Ma Boodid Mitavanid Ba Zadan Dastoor "/server lobby" Varede Lobby Shavid Va Game mode Mored Nazar Khod Ea Vared Shavid.</p>
+      </div>
+      <div class="box">
+        <h3>Role Play</h3>
+        <p>GameMode RolePlay Ieki Az GameMode Hai Marofe Server Hast ke Ieki Az GameMode Hai Server Pixel-Craft Ham Hast Mitoonid Dar GameMode RolePlay Manand Doniai Vaghei Bazi konid<br>Dar RolePlay Server Pixel-Craft Har Hafte Event Hai Khas Hast ke Ba Vrood Be <a href="">Discord Server Ma </a>Mitavanid Dar Event Ha Sherkat Konid.</p>
+      </div>
+      <div class="box">
+        <h3>World</h3>
+        <p>Be Zoodi ...</p>
+      </div>
+    </section>
+
+    <section class="small-text">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt delectus, quod praesentium obcaecati tenetur dolores ipsa quae libero voluptate itaque.
+    </section>
+  </main>
+<script>
+  const imageBox = document.querySelector('.image-right');
+  const backgrounds = [
+    'https://s6.uupload.ir/files/police_3az5.png',
+    'https://s6.uupload.ir/files/masjed_ctq8.png',
+    'https://s6.uupload.ir/files/bimarestan_om2.png',
+    'https://s6.uupload.ir/files/bank_uuac.png',
+    'https://s6.uupload.ir/files/atashneshan_m80s.png'
+  ];
+
+  let index = 0;
+
+  function changeBackground() {
+    imageBox.classList.remove('fade-in');
+    void imageBox.offsetWidth; // ریست کلاس برای اجرای مجدد انیمیشن
+    index = (index + 1) % backgrounds.length;
+    imageBox.style.backgroundImage = `url('${backgrounds[index]}')`;
+    imageBox.classList.add('fade-in');
+  }
+
+  setInterval(changeBackground, 10000);
+</script>
+
+</body>
+</html>
