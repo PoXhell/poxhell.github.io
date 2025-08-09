@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test XSS</title>
+</head>
+<body>
+    <script>
+        function buttonclicked() {
+            var el = document.getElementById("firjifjrfiwjopfqjroifjqprwoifjqorif");
+            var me = el.value;
+            // Corrected check for < and >
+            if (me.includes('<') || me.includes('>')) {
+                document.getElementById("tttddd").innerHTML = '"<" And ">" Not Supported';
+            } else {
+                // Simple sanitization by escaping the string
+                var sanitizedInput = me.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                document.getElementById("tttddd").innerHTML = sanitizedInput;
+            }
+        }
+    </script>
+    <h1 id="tttddd">This Is Test XSS!!!!</h1>
+    <input type="text" id="firjifjrfiwjopfqjroifjqprwoifjqorif" placeholder="Type ی چیزی">
+    <button type="button" onclick="buttonclicked()">Click Meeeeee!!!!</button>
+</body>
+</html>
